@@ -1,0 +1,56 @@
+import javax.swing.*;
+import javax.swing.table.*;
+import java.awt.*;
+import java.awt.event.*;
+
+
+
+class ViewStudentDetailsForm extends JFrame{
+	private JTable tblStudentDetails;
+	private DefaultTableModel dtm;
+	
+	private JButton btnReload;
+	
+	ViewStudentDetailsForm(){
+		setTitle("View Student Form");
+		setSize(400,300);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		setLocationRelativeTo(null);
+		
+		JLabel lblTitle=new JLabel("View Student Details Form");
+		lblTitle.setFont(new Font("",1,28));
+		lblTitle.setHorizontalAlignment(JLabel.CENTER);
+		add("North",lblTitle);
+		
+		
+		
+		JPanel buttonPanel=new JPanel(); //default layout->FlowLayout(CENTER)
+		btnReload=new JButton("Reload");
+		btnReload.setFont(new Font("",1,10));
+		buttonPanel.add(btnReload);
+		add("South",buttonPanel);
+		
+		btnReload.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent evt){
+				Object[] rowData={"S0001","Niroth",76,45};
+				dtm.addRow(rowData);
+
+			}
+		});
+
+
+
+		
+		String[] columnsName={"Id","Name","PRF","DBMS"};
+		dtm=new DefaultTableModel(columnsName,0);
+		tblStudentDetails=new JTable(dtm);
+		JScrollPane tablePane=new JScrollPane(tblStudentDetails);
+		add("Center",tablePane);
+	}
+	
+}
+class Demo{
+	public static void main(String[] args) {
+		new ViewStudentDetailsForm().setVisible(true);
+	}
+}

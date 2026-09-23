@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations & Contact | Trattoria Ricci</title>
+    <link rel="stylesheet" href="Assets\css\style.css">
+</head>
+<body>
+
+    
+    <header>
+        <div class="logo">Trattoria Ricci</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="events.html">Private Events</a></li>
+                <li><a href="contact.html" class="active">Reservations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  
+    <section class="contact-container">
+        <h1>Find Us & Book a Table</h1>
+        <p class="contact-intro">Join us for an authentic Italian dining experience. Reservations are highly recommended.</p>
+
+        <div class="contact-content">
+            
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p><strong>Address:</strong> 123 Via Roma, Little Italy, Cityville</p>
+                <p><strong>Phone:</strong> +1 (555) 019-2834</p>
+                <p><strong>Email:</strong> ciao@trattoriaricci.com</p>
+                
+                <h2 class="hours-title">Opening Hours</h2>
+                <p>Tuesday - Friday: 4:00 PM - 10:00 PM</p>
+                <p>Saturday - Sunday: 11:30 AM - 11:00 PM</p>
+                <p class="closed-day"><em>Closed on Mondays</em></p>
+            </div>
+
+            
+            <div class="booking-form">
+                <h2>Make a Reservation</h2>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Time</label>
+                            <input type="time" id="time" name="time" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests" name="guests" required>
+                            <option value="1">1 Person</option>
+                            <option value="2" selected>2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5">5+ People</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn form-btn">Submit Reservation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Trattoria Ricci. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

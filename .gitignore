@@ -1,0 +1,9 @@
+*.mp4
+*.mkv
+*.pdf
+*.zip
+*.rar
+out/
+target/
+.idea/
+.vscode/

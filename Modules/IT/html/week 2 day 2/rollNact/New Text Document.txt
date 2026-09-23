@@ -1,0 +1,168 @@
+        <section>
+            <center>
+                <h2>Movies</h2>
+            </center>
+
+            <table cellspacing="100" cellpadding="30">
+                <tr>
+                    <th>YouTube Trailer</th>
+                    <th>Movie Name</th>
+                    <th>Director</th>
+                    <th>IMDB Rating</th>
+                    <th>Downloads</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <iframe width="250" height="140"
+                            src="https://www.youtube.com/embed/JfVOs4VSpmA?si=KUeaikZxpdSnIUC4"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </td>
+                    <td>Spider-Man<br>No Way Home</td>
+                    <td>Jon Watts</td>
+                    <td>8.1/10</td>
+                    <td>
+                        <a href="" target="_blank">
+                            <button type="button">480p Download</button>
+                        </a>
+                        <br><br>
+                        <a href="" target="_blank">
+                            <button type="button">720p Download</button>
+                        </a>
+                        <br><br>
+                        <a href="" target="_blank">
+                            <button type="button">1080p Download</button>
+                        </a>
+
+
+                    </td>
+
+                <tr>
+                    <td>
+                        <iframe width="250" height="140"
+                            src="https://www.youtube.com/embed/m08TxIsFTRI?si=RSQfde-9vX0FLBC9"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </td>
+
+                    <td>Project Hail Mary</td>
+                    <td>Phil Lord <br> Chris Miller</td>
+                    <td>8.3/10</td>
+                    <td> <a href="" target="_blank">
+                            <button type="button">480p Download</button>
+                        </a>
+                        <br><br>
+                        <a href="" target="_blank">
+                            <button type="button">720p Download</button>
+                        </a>
+                        <br><br>
+                        <a href="" target="_blank">
+                            <button type="button">1080p Download</button>
+                        </a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <iframe width="250" height="140"
+                            src="https://www.youtube.com/embed/uYPbbksJxIg?si=x6GAGmSwHC_0dWl4"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </td>
+                    <td>Oppenheimer</td>
+                    <td>Christopher Nolan</td>
+                    <td>8.2/10</td>
+                    <td> <a href="" target="_blank">
+                            <button type="button">480p Download</button>
+                        </a>
+                        <br><br>
+                        <a href="" target="_blank">
+                            <button type="button">720p Download</button>
+                        </a>
+                        <br><br>
+                        <a href="" target="_blank">
+                            <button type="button">1080p Download</button>
+                        </a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <iframe width="250" height="140"
+                            src="https://www.youtube.com/embed/BjkIOU5PhyQ?si=hd9iE7d5RDtlmLD0"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </td>
+                    <td>Zootopia 2</td>
+                    <td>Jared Bush<br> Byron Howard</td>
+                    <td>7.3/10</td>
+                    <td> <a href="" target="_blank">
+                            <button type="button">480p Download</button>
+                        </a>
+                        <br><br>
+                        <a href="" target="_blank">
+                            <button type="button">720p Download</button>
+                        </a>
+                        <br><br>
+                        <a href="" target="_blank">
+                            <button type="button">1080p Download</button>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <iframe width="250" height="140"
+                            src="https://www.youtube.com/embed/rZ_e-s6VvR4?si=WytbHpTrqbzMMErf"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </td>
+                    <td>Dhurandhar 1</td>
+                    <td>Aditya Dhar</td>
+                    <td>8.3/10</td>
+                    <td> <a href="" target="_blank">
+                            <button type="button">480p Download</button>
+                        </a>
+                        <br><br>
+                        <a href="" target="_blank">
+                            <button type="button">720p Download</button>
+                        </a>
+                        <br><br>
+                        <a href="" target="_blank">
+                            <button type="button">1080p Download</button>
+                        </a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <iframe width="250" height="140"
+                            src="https://www.youtube.com/embed/NHk7scrb_9I?si=EYbHclltO-IrB9Zs"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </td>
+                    <td>Dhurandhar 2</td>
+                    <td>Aditya Dhar</td>
+                    <td>8.3/10</td>
+                    <td> <a href="" target="_blank">
+                            <button type="button">480p Download</button>
+                        </a>
+                        <br><br>
+                        <a href="" target="_blank">
+                            <button type="button">720p Download</button>
+                        </a>
+                        <br><br>
+                        <a href="" target="_blank">
+                            <button type="button">1080p Download</button>
+                        </a>
+                    </td>
+                </tr>
+
+        </section>
+        <hr>
