@@ -156,67 +156,41 @@ public class CourseWork01{
 	
 	//STUDENT MANAGEMENT-->add student
     public static void addStudent(){
+		Scanner input=new Scanner(System.in);
+		
 		L1:do{
-			System.out.println("-----------------------------------------------------------------");
+			boarderLines();
 			System.out.println("|\t\t\t\tAdd Student \t\t\t|");
-			System.out.println("-----------------------------------------------------------------\n");
+			boarderLines();
 			
-			Scanner input=new Scanner(System.in);
 			System.out.print("Enter Bacth Number (Student should be added) : ");
 			int bacthNumber=input.nextInt();
 			
-			if(checkBacthNumber(bacthNumber)){
-				if(checkBacthStatus(bacthNumber)){
-					System.out.print("\nEnter Student NIC : ");
-					String stuNIC=input.next();
-						if(checkNIC(stuNIC)==false){
-							input.nextLine();
-							System.out.print("\nEnter Student Name: ");
-							String stuName=input.nextLine();
-							
-							System.out.print("\nEnter Lecturer Mode (1-PHYSICAL 0-ONLINE): ");
-							int lectureMode=input.nextInt();
-							
-							String regNum=createRegistrationNo(lectureMode, bacthNumber);
-							System.out.println("\nStudent Registration No - "+regNum);
-							
-							updateArrays(stuNIC,stuName,regNum);
-							
-							System.out.println("\n\tStudent was successfully added to the system.");
-							
-							System.out.print("\n\nDo you want to add another student(Y/N):");
-							char optionYesorNo=input.next().charAt(0);
-							
-							optionYesorNo(optionYesorNo);
-							continue L1;
-							
-						}else{
-							System.out.print("\n\tThis student already added to the system");
-							
-							System.out.print("\n\nDo you want to add another student(Y/N):");
-							char optionYesorNo=input.next().charAt(0);
-							
-							optionYesorNo(optionYesorNo);
-							continue L1;	
-						}
-				}else{
-					System.out.print("\n\tStudent cannot be added to this bacth because enrollment is closed.");
-					System.out.print("\n\nDo you want to add another student(Y/N):");
-					char optionYesorNo=input.next().charAt(0);
-					
-					optionYesorNo(optionYesorNo);
-					continue L1;
-				}
+			if(hasBacth(bacthNumber)){
+				
+				
 			}else{
 				System.out.print("\n\tStudent cannot be added to this bacth because this batch not found.");
 				System.out.print("\n\nDo you want to add another student(Y/N):");
-				char optionYesorNo=input.next().charAt(0);
+				char inputYesNo=input.next().charAt(0);
 				
-				optionYesorNo(optionYesorNo);
-				continue L1;	
+				if (isInputYes(inputYesNo)){
+					clearConsole();
+					continue L1;
+				}else{
+					clearConsole();
+					return;
+				}
 			}
-		}while(true);
+			
+		} while (true);
+		
+		
+		
 	}
+	
+
+	
 		
     public static void main(String args[]){
 		homePage();
