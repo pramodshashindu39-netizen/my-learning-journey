@@ -7,3 +7,5 @@ out/
 target/
 .idea/
 .vscode/
+/Modules/NetBeans Projects/Demo/nbproject/private/
+/Modules/NetBeans Projects/Demo/build/

@@ -1,45 +1,4 @@
 import java.util.*;
-class Student{
-	
-	    private String regNo ;
-		private String nic ;
-		private String name ;
-		private int prf ;
-		private int dbms ;
-		private int batchNo ;
-
-		public Student(String regNo,String nic,String name,int prf,int dbms,int batchNo){
-			this.regNo=regNo;
-			this.nic=nic;
-			this.name=name;
-			this.prf=prf;
-			this.dbms=dbms;
-			this.batchNo=batchNo;
-	
-		}
-		
-		
-		
-}
-
-class Bacth{
-	
-    private int ENROLLMENTOPEN = 1;
-    private int ENROLLMENTCLOSED = 0;
-	
-    private int batchNameArray ;
-    private int batchStatusArray ;
-    
-    Bacth(int batchNameArray,int batchStatusArray){
-		this.batchNameArray = batchNameArray;
-		this.batchStatusArray = batchStatusArray;
-	}
-    
-    
-	
-}
-
-
 
 public class CourseWork01{
 	
@@ -183,10 +142,7 @@ public class CourseWork01{
 				}
 			}
 			
-		} while (true);
-		
-		
-		
+		} while (true);	
 	}
 	
 
