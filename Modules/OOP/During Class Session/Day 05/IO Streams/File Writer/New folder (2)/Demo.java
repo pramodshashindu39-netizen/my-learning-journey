@@ -1,0 +1,14 @@
+import java.io.*;
+class Demo{
+	public static void main(String[] args) {
+		try{
+			File f1=new File("E:/iCET/Modules/OOP/During Class Session/Day 05/IO Files/Test.docx");
+			FileWriter fw=new FileWriter(f1,true);
+			fw.write("Hello java"+"\n");
+			//fw.flush(); 
+			fw.close();
+		}catch(IOException ex){
+			
+		}
+	}
+}

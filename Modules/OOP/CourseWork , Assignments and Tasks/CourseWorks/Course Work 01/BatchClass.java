@@ -3,11 +3,20 @@ class Bacth{
     private int ENROLLMENTOPEN = 1;
     private int ENROLLMENTCLOSED = 0;
 	
-    private int batchNameArray ;
-    private int batchStatusArray ;
+    private int batchName ;
+    private int batchStatus ;
     
-    Bacth(int batchNameArray,int batchStatusArray){
-		this.batchNameArray = batchNameArray;
-		this.batchStatusArray = batchStatusArray;
+    Bacth(int batchName,int batchStatus){
+		this.batchName = batchName;
+		this.batchStatus = batchStatus;
 	}
+	
+	int getBatchName(){
+		return batchName;
+	}
+	
+	int getBatchStatus(){
+		return batchStatus;
+	}
+	
 }

@@ -4,7 +4,7 @@ class StudentManagementSystem {
     
     // Batch status
     public static final int ENROLLMENTOPEN = 1;
-    public static final int ENROLLMENTCLOSED = 0;
+	public static final int ENROLLMENTCLOSED = 0;
 
     // Batch data
     public static int[] batchNameArray = { 105, 106, 107, 108, 109, 110 };

@@ -3,7 +3,7 @@ import java.util.*;
 public class CourseWork01{
 	
 	public static Student [] studentArray ={};
-	public static Bacth   [] batchArray ={new Bacth(100,1)};
+	public static Bacth   [] batchArray ={new Bacth(100,1),new Bacth(101,1),new Bacth(103,0)};
 	
 	
 	//CONSOLE CLEAR
@@ -30,9 +30,9 @@ public class CourseWork01{
 	//HOME PAGE
 	public static void homePage() {
 		do {
-			System.out.println("-----------------------------------------------------------------");
+			boarderLines();
 			System.out.println("|\t\t\tiCET Student Management System\t\t|");
-			System.out.println("-----------------------------------------------------------------\n");
+			boarderLines();
 			System.out.println("[1] Student Management");
 			System.out.println("\n[2] Batch Management ");
 			System.out.println("\n[3] Grade Management");
@@ -125,13 +125,27 @@ public class CourseWork01{
 			System.out.print("Enter Bacth Number (Student should be added) : ");
 			int bacthNumber=input.nextInt();
 			
-			if(hasBacth(bacthNumber)){
+			int bacthStatus=checkBacthNumberAndBatchStatus(bacthNumber);
+			if(bacthStatus==1){
 				
+				
+			}else if (bacthStatus==0){
+				System.out.println("\n\tStudent cannot be added to this bacth because enrollment is closed.");
+				System.out.print("\n\nDo you want to add another student(Y/N):");
+				String inputYesNo=input.next();
+				
+				if (isInputYes(inputYesNo)){
+					clearConsole();
+					continue L1;
+				}else{
+					clearConsole();
+					return;
+				}
 				
 			}else{
-				System.out.print("\n\tStudent cannot be added to this bacth because this batch not found.");
+				System.out.print("\n\tStudent cannot be added to this bacth because this batch not found .");
 				System.out.print("\n\nDo you want to add another student(Y/N):");
-				char inputYesNo=input.next().charAt(0);
+				String inputYesNo=input.next();
 				
 				if (isInputYes(inputYesNo)){
 					clearConsole();
@@ -143,6 +157,23 @@ public class CourseWork01{
 			}
 			
 		} while (true);	
+	}
+	
+	//Check Batch
+	public static int checkBacthNumberAndBatchStatus(int bacthNumber){
+		for (Bacth batch: batchArray){
+			if (batch.getBatchName()==bacthNumber){
+				if (batch.getBatchStatus()==1){
+					return 1;
+				}else return 0;
+			}
+		}
+		return -2;
+	}
+	
+	//
+	public static boolean isInputYes(String inputYesNo){
+		return inputYesNo.equalsIgnoreCase("Y") || inputYesNo.equalsIgnoreCase("Yes");
 	}
 	
 

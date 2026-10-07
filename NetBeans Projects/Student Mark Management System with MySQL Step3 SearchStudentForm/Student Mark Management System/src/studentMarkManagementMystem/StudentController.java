@@ -1,0 +1,90 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package studentMarkManagementMystem;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author pc
+ */
+class StudentController {
+
+    public static boolean addNewStudent(Student student) throws ClassNotFoundException, SQLException {
+        String SQL = "Insert into Student values('" + student.getId() + "','" + student.getName() + "'," + student.getPrfMarks() + "," + student.getDbmsMarks() + ")";
+        Statement stm = DBConnection.getInstance().getConnetion().createStatement();
+        int res = stm.executeUpdate(SQL);
+        return res > 0;
+    }
+
+    public static String getNewStudentId() throws ClassNotFoundException, SQLException {
+        String SQL = "select id from Student order by id desc limit 1";
+        Statement stm = DBConnection.getInstance().getConnetion().createStatement();
+        ResultSet rst = stm.executeQuery(SQL);
+        if (rst.next()) {
+            int lastStudentIdNo = Integer.parseInt(rst.getString("id").substring(1));//0001
+            return String.format("S%04d", lastStudentIdNo + 1);
+        }
+        return "S0001";
+    }
+
+    public static Student searchStudent(String id) throws ClassNotFoundException, SQLException{
+        Statement stm = DBConnection.getInstance().getConnetion().createStatement();
+        String SQL="Select * From Student where id='"+id+"'";
+        ResultSet rst = stm.executeQuery(SQL);
+        if(rst.next()){
+            return  new Student(id, rst.getString("name"), rst.getInt("prfMarks"), rst.getInt("dbmsMarks"));
+        }
+        return null;
+    }
+
+    public static boolean deleteStudent(String id) throws IOException, ClassNotFoundException, SQLException {
+        if (searchStudent(id) != null) {
+            File oldFile = new File("Student.txt");
+            File tempFile = new File("TempFile.txt");
+            Scanner input = new Scanner(oldFile);
+            FileWriter fw = new FileWriter(tempFile, true);
+            while (input.hasNextLine()) {
+                String line = input.nextLine();
+                if (!line.substring(0, 5).equalsIgnoreCase(id)) {
+                    fw.write(line + "\n");
+                }
+            }
+            input.close();
+            fw.close();
+            oldFile.delete();
+            try {
+                Thread.sleep(7000);
+            } catch (Exception ex) {
+            }
+            File newFile = new File("Student.txt");
+            FileWriter newFileWriter = new FileWriter(newFile, true);
+            input = new Scanner(tempFile);
+            while (input.hasNextLine()) {
+                newFileWriter.write(input.nextLine() + "\n");
+            }
+            newFileWriter.close();
+            input.close();
+            tempFile.delete();
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean updateStudent(Student student) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public static Student[] getAllStudent() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+}
