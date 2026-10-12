@@ -4,6 +4,10 @@
  */
 package studentMarkManagementMystem;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -61,7 +65,7 @@ public class ViewStudentDetailsForm extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblStudentDetail);
 
         btnReload.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnReload.setText("Reload");
+        btnReload.setText("View All  Student Details");
         btnReload.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReloadActionPerformed(evt);
@@ -80,8 +84,8 @@ public class ViewStudentDetailsForm extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnReload)
+                .addGap(51, 51, 51)
+                .addComponent(btnReload, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -91,9 +95,9 @@ public class ViewStudentDetailsForm extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnReload)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -104,11 +108,24 @@ public class ViewStudentDetailsForm extends javax.swing.JFrame {
         /*AccessStudentCollection instance = AccessStudentCollection.getInstance();
         StudentCollection studentCollection = instance.getStudentCollection();
         Student[] allStudent = studentCollection.getAllStudent();*/
-        Student[] allStudent = StudentController.getAllStudent();
-        dtm.setRowCount(0);
-        for (Student student : allStudent) {
-            Object[] rowData={student.getId(),student.getName(),student.getPrfMarks(),student.getDbmsMarks()};
-            dtm.addRow(rowData);
+        Student[] allStudent = null;
+        try {
+            allStudent = StudentController.getAllStudent();
+            
+            if (allStudent==null) {
+                JOptionPane.showMessageDialog(this, "There are no Students in DataBase.");
+            }else{
+                dtm.setRowCount(0);
+                
+                for (Student student : allStudent) {
+                    Object[] rowData={student.getId(),student.getName(),student.getPrfMarks(),student.getDbmsMarks()};
+                    dtm.addRow(rowData);
+                }
+            }
+        }catch (ClassNotFoundException ex) {
+            Logger.getLogger(ViewStudentDetailsForm.class.getName()).log(Level.SEVERE, null, ex);
+        }catch (SQLException ex) {
+            Logger.getLogger(ViewStudentDetailsForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnReloadActionPerformed
 

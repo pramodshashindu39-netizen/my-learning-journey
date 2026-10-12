@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -38,8 +39,7 @@ class StudentController {
     }
 
     public static Student searchStudent(String id) throws ClassNotFoundException, SQLException{
-        String SQL="Select * From Student where id='"+id+"'";
-        ResultSet rst = DBConnection.getInstance().getConnetion().createStatement().executeQuery(SQL);
+        ResultSet rst = DBConnection.getInstance().getConnetion().createStatement().executeQuery("Select * From Student where id='"+id+"'");
         return rst.next() ? new Student(id, rst.getString("name"), rst.getInt("prfMarks"), rst.getInt("dbmsMarks")): null;
     }
 
@@ -54,7 +54,23 @@ class StudentController {
         return res > 0;
     }
 
-    public static Student[] getAllStudent() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public static Student[] getAllStudent() throws ClassNotFoundException, SQLException {
+       String SQL="Select * From Student";
+       ResultSet rst=DBConnection.getInstance().getConnetion().createStatement().executeQuery(SQL);
+       Student[] studentDetails=new Student[0];
+       
+        while(rst.next()){
+           Student[] tempstudentDetails = new Student[studentDetails.length+1];
+           for (int i = 0; i < studentDetails.length; i++) {
+               tempstudentDetails[i]=studentDetails[i];
+           }
+           studentDetails=tempstudentDetails;
+           
+           studentDetails[studentDetails.length-1] = new Student(rst.getString("id"), rst.getString("name"), rst.getInt("prfMarks"), rst.getInt("dbmsMarks"));   
+        }
+       
+        if (studentDetails.length==0) {
+            return null;
+        }else return studentDetails;
     }
 }
